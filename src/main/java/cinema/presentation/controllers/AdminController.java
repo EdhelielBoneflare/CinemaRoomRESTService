@@ -4,6 +4,7 @@ import cinema.exceptions.exception.IllegalAccessRuntimeException;
 import cinema.presentation.dtos.ErrorResponseDTO;
 import cinema.presentation.dtos.StatsDTO;
 import cinema.services.BookingService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -21,6 +22,7 @@ public class AdminController {
     }
 
 
+    // return number of seats available, total income and  number of sold seats
     @GetMapping("/stats")
     public ResponseEntity<StatsDTO> getStats(@RequestParam(name = "password") String password) {
         if (password == null) {

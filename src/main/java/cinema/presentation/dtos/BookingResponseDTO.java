@@ -1,7 +1,9 @@
 package cinema.presentation.dtos;
 
 import cinema.models.Ticket;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonPropertyOrder({ "token", "ticket" })
 public class BookingResponseDTO {
     private final String token;
     private final Ticket ticket;
